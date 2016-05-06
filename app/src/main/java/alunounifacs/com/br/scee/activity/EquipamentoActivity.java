@@ -26,10 +26,13 @@ public class EquipamentoActivity extends BaseActivity {
         helper = new EquipamentoHelper(EquipamentoActivity.this);
 
         equipamento = (Equipamento) getIntent().getSerializableExtra("equipamento");
-        if (equipamento != null)
+        if (equipamento != null) {
             helper.setEquipamento(equipamento);
-        else
+            setTitle(getString(R.string.title_editar_equipamento));
+        } else {
             equipamento = new Equipamento();
+        }
+
         Departamento departamento = (Departamento) getIntent().getSerializableExtra("departamento");
         if (departamento != null) {
             equipamento.setDepartamento(departamento);

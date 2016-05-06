@@ -22,7 +22,7 @@
         </activity>
         <activity
             android:name=".activity.EquipamentoActivity"
-            android:label="Novo Equipamento" />
+            android:label="@string/title_novo_equipamento" />
         <activity android:name=".activity.ConfiguracoesActivity" >
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"

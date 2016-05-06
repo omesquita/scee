@@ -5,31 +5,37 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
-    <string name="novo_departamento">Novo Departamento</string>
-    <string name="descricao_etc">Descrição...</string>
-    <string name="editar_departamento">Editar Departamento</string>
-    <string name="calcular_consumo">Calcular Consumo</string>
-    <string name="excluir">Excluir</string>
-    <string name="salvar">Salvar</string>
-    <string name="kwh">"KWh"</string>
-    <string name="departamento_s_excluido">Departamento %s excluído com Sucesso!</string>
-    <string name="departamento_not_excluido">Departamento só pode ser excluído se não houver equipamentos vinculados.</string>
-    <string name="equipamentos">Equipamentos</string>
-    <string name="nome_do_equipamento">Nome do Equipamento*</string>    <string name="potencia_requerido">Potência (em Whats)*</string>
-    <string name="horas_por_dia_requerido">Tempo Ligado (Horas por Dia)*</string>
-    <string name="dias_por_mes_requerido">Período (Dias)*</string>
-    <string name="campo_obrigatorio">Campo Obrigatório!</string>
+    <string name="cadastros">Cadastros</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="configuraces">Configurações</string>
     <string name="departamento">Departamento</string>
+    <string name="equipamento">Equipamento</string>
+
+    <string name="novo_departamento">Novo Departamento</string>
+    <string name="editar_departamento">Editar Departamento</string>
+    <string name="descricao_etc">Descrição…</string>
+    <string name="salvar">Salvar</string>
+    <string name="excluir">Excluir</string>
+
+    <string name="msg_departamento_not_excluido">Departamento só pode ser excluído se não houver equipamentos vinculados.</string>
+
+    <string name="kwh">"KWh"</string>
+    <string name="rs">R$</string>
+    <string name="w">W</string>
+    <string name="ok">OK</string>
+
+
+    <string name="equipamentos">Equipamentos</string>
+    <string name="nome_do_equipamento">Nome do Equipamento*</string>
+    <string name="potencia_requerido">Potência (em Whats)*</string>
+    <string name="horas_dia_requerido">Tempo Ligado (Horas por Dia)*</string>
+    <string name="dias_mes_requerido">Período (Dias)*</string>
+    <string name="campo_obrigatorio">Campo Obrigatório!</string>
     <string name="s_salvo">%s salvo com Suscesso!</string>
     <string name="s_excluido">%s excluído com Sucesso!</string>
     <string name="simular_fatura">Simular Fatura</string>
-    <string name="ok">OK</string>
     <string name="atencao">Atenção!</string>
-    <string name="configuraces">Configurações</string>
-    <string name="equipamento">Equipamento</string>
-    <string name="cadastros">Cadastros</string>
-    <string name="dashboard">Dashboard</string>
+
     <string name="tarifas">Tarifas</string>
     <string name="ate_30_kwh">Até 30KWh</string>
     <string name="ate_50_kwh">Até 50KWh</string>
@@ -42,6 +48,15 @@
     <string name="virgula">,</string>
     <string name="dias_mes">dias/mes.</string>
     <string name="potencia">Potencia:</string>
-    <string name="w">W</string>
-    <string name="rs">R$</string>
+    <string name="numero_de_equipamentos">Quantidade de Equipamentos:</string>
+    <string name="detalhes_da_fatura">Detalhes da Fatura</string>
+    <string name="resumo_de_departamentos">Resumo de Departamentos</string>
+    <string name="n_mero_de_departamentos">Número de Departamentos</string>
+    <string name="consumo_total">Consumo Total</string>
+    <string name="valor_total_da_fatura">Valor Total da Fatura</string>
+    <string name="quantidade_de_departamentos">Quantidade de Departamentos</string>
+    <string name="quantidade_de_equipamentos">Quantidade de Equipamentos</string>
+    <string name="valor_total">Valor Total</string>
+    <string name="title_novo_equipamento">Novo Equipamento</string>
+    <string name="title_editar_equipamento">Editar Equipamento</string>
 </resources>

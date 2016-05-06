@@ -5,11 +5,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.List;
-import java.util.Locale;
 
 import alunounifacs.com.br.scee.R;
 import alunounifacs.com.br.scee.model.Equipamento;
@@ -54,7 +52,7 @@ public class EquipamentoAdapter extends RecyclerView.Adapter<EquipamentoAdapter.
         holder.txvDiasMes.setText(String.valueOf(equipamento.getDiasMes()));
         holder.txvPotencia.setText(String.valueOf(equipamento.getPotencia()));
         holder.txvDepartamento.setText(equipamento.getDepartamento().getDescricao());
-        holder.txvConsumo.setText(String.valueOf(equipamento.getConsumo()));
+        holder.txvConsumo.setText(String.format("%.2f", equipamento.getConsumo()));
         holder.txvValor.setText(String.format("%.2f", equipamento.getValorConsumo()));
 
         if (onClickListner != null) {

@@ -74,10 +74,10 @@ public class DepartamentoFragment extends BaseFragment implements DepartamentoDi
     public void onClickItemExcluir(Departamento departamento) {
         if(new DepartamentoDAO(getContext()).deletar(departamento)) {
             onResume();
-            toast(getString(R.string.departamento_s_excluido, departamento.getDescricao()));
+            toast(getString(R.string.s_excluido, departamento.getDescricao()));
         } else {
             simpleDialog(getString(R.string.atencao),
-                    getString(R.string.departamento_not_excluido));
+                    getString(R.string.msg_departamento_not_excluido));
         }
     }
 

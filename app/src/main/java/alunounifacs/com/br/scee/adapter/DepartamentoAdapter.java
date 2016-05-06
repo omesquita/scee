@@ -49,22 +49,15 @@ public class DepartamentoAdapter extends RecyclerView.Adapter<DepartamentoAdapte
     @Override
     public void onBindViewHolder(final DepartamentoAdapter.ViewHolder holder, int position) {
         final Departamento departamento = departamentos.get(holder.getAdapterPosition());
+        departamento.calcularConsumo();
 
         holder.txvDescricao.setText(departamento.getDescricao());
-
         holder.txvQtdEquipamento.setText(
                 departamento.getEquipamentos() == null ? "0" : departamento.getEquipamentos().size()+"");
-        holder.txvConsumo.setText(context.getString(R.string.kwh, departamento.getConsumo()));
-        holder.txvValor.setText(String.format("R$ %s", String.format("%.2f", departamento.getValor())));
-        holder.ibtnCalcular.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                departamento.setEquipamentos(new EquipamentoDAO(context).getAllByDepartamento(departamento));
-                departamento.calcularConsumo();
-                new DepartamentoDAO(context).salvar(departamento);
-                holder.txvConsumo.setText(context.getString(R.string.kwh, departamento.getConsumo()));
-            }
-        });
+        holder.txvConsumo.setText(String.format("%.2f", departamento.getConsumo()));
+        holder.txvValor.setText(String.format("%.2f", departamento.getValor()));
+
+
         if (onClickListner != null) {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -100,7 +93,6 @@ public class DepartamentoAdapter extends RecyclerView.Adapter<DepartamentoAdapte
         private TextView txvQtdEquipamento;
         private TextView txvConsumo;
         private TextView txvValor;
-        private ImageButton ibtnCalcular;
         private ImageButton ibtnEditar;
         private ImageButton ibtnExcluir;
 
@@ -118,7 +110,6 @@ public class DepartamentoAdapter extends RecyclerView.Adapter<DepartamentoAdapte
             txvQtdEquipamento = (TextView) view.findViewById(R.id.txvQtdEquipamento);
             txvConsumo = (TextView) view.findViewById(R.id.txvConsumo);
             txvValor = (TextView) view.findViewById(R.id.txvValor);
-            ibtnCalcular = (ImageButton) view.findViewById(R.id.ibtnCalcular);
             ibtnEditar = (ImageButton) view.findViewById(R.id.ibtnEditar);
             ibtnExcluir = (ImageButton) view.findViewById(R.id.ibtnExcluir);
         }

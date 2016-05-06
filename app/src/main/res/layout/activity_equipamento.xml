@@ -45,7 +45,7 @@
                 android:id="@+id/edtHorasDia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/horas_por_dia_requerido"
+                android:hint="@string/horas_dia_requerido"
 
                 android:inputType="number" />
         </android.support.design.widget.TextInputLayout>
@@ -58,7 +58,7 @@
                 android:id="@+id/edtDiasMes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/dias_por_mes_requerido"
+                android:hint="@string/dias_mes_requerido"
                 android:inputType="number" />
         </android.support.design.widget.TextInputLayout>
 

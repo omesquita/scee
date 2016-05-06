@@ -3,6 +3,7 @@ package alunounifacs.com.br.scee.model;
 import android.content.Context;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -19,6 +20,10 @@ public class Fatura implements Serializable {
     private Tipo tipoDeTarifa;
     private List<Tarifa> tarifasAplicadas;
     private List<Departamento> departamentos;
+
+    public Fatura() {
+        tarifasAplicadas = new ArrayList<>();
+    }
 
     public int getId() {
         return id;
@@ -68,6 +73,18 @@ public class Fatura implements Serializable {
         return tipoDeTarifa;
     }
 
+    public int getQtdEquipamentos() {
+        int sum = 0;
+        for (Departamento d : departamentos) {
+            sum += d.getEquipamentos() == null ? 0 : d.getEquipamentos().size();
+        }
+        return sum;
+    }
+
+    public int getQtdDepartamentos() {
+        return departamentos == null ? 0 : departamentos.size();
+    }
+
     public void calculaFatura(Context context) {
         calcularConsumoTotal();
 
@@ -95,10 +112,10 @@ public class Fatura implements Serializable {
 
     private Tipo getTipoTarifa(Context context) {
         List<Tipo> tipos = new TipoDAO(context).getAll();
-
         for (Tipo tipo : tipos) {
             if (consumoKWh > tipo.getConsumoMaximo())
                 continue;
+            this.tipoDeTarifa = tipo;
             return tipo;
         }
         return null;
