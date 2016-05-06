@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_dashboard"
+        android:icon="@drawable/ic_nav_dashboard"
+        android:title="Dashboard" />
+
+    <item android:title="Cadastros">
+        <menu>
+            <item
+                android:id="@+id/nav_departamento"
+                android:icon="@drawable/ic_nav_departamento"
+                android:title="Departamento" />
+            <item
+                android:id="@+id/nav_equipamento"
+                android:icon="@drawable/ic_nav_equipamento"
+                android:title="Equipamento" />
+        </menu>
+    </item>
+    <item android:title="Configurações">
+        <menu>
+            <item
+                android:id="@+id/nav_configuracoes"
+                android:icon="@drawable/ic_nav_configuracoes"
+                android:title="Tarifas" />
+        </menu>
+    </item>
+</menu>

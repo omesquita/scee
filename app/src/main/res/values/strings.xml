@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">SCEE</string>
+    <string name="app_description">Simulador de Conta de Energia Elétrica</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="novo_departamento">Novo Departamento</string>
+    <string name="descricao_etc">Descrição...</string>
+    <string name="editar_departamento">Editar Departamento</string>
+    <string name="calcular_consumo">Calcular Consumo</string>
+    <string name="excluir">Excluir</string>
+    <string name="salvar">Salvar</string>
+    <string name="kwh">"%s KWh"</string>
+    <string name="departamento_s_excluido">Departamento %s excluído com Sucesso!</string>
+    <string name="departamento_not_excluido">Departamento só pode ser excluído se não houver equipamentos.</string>
+    <string name="equipamentos">Equipamentos</string>
+    <string name="equipamento_s_excluido">Equipamento %s excluído com Sucesso!</string>
+    <string name="descricao_requerido">Descrição*</string>
+    <string name="potencia_requerido">Potência*</string>
+    <string name="informacao_valores_aproximados">Os dados abaixo são valores aproximados de uso deste equipamento.</string>
+    <string name="horas_por_dia_requerido">Horas por Dia*</string>
+    <string name="dias_por_mes_requerido">Dias por Mes*</string>
+    <string name="campo_obrigatorio">Campo Obrigatório!</string>
+    <string name="departamento">Departamento</string>
+    <string name="equipamento_s_salvo">Equipamento %s Salvo Com Suscesso!</string>
+    <string name="simular_fatura">Simular Fatura</string>
+</resources>
