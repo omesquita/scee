@@ -3,7 +3,6 @@ package alunounifacs.com.br.scee.fragment;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -77,7 +76,7 @@ public class DepartamentoFragment extends BaseFragment implements DepartamentoDi
             onResume();
             toast(getString(R.string.departamento_s_excluido, departamento.getDescricao()));
         } else {
-            simpleDialog(getString(R.string.operacao_nao_permitida),
+            simpleDialog(getString(R.string.atencao),
                     getString(R.string.departamento_not_excluido));
         }
     }

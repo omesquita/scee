@@ -22,7 +22,7 @@
                 android:id="@+id/edtDescricao"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/descricao_requerido" />
+                android:hint="@string/nome_do_equipamento" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -37,45 +37,30 @@
                 android:inputType="numberDecimal" />
         </android.support.design.widget.TextInputLayout>
 
-        <TextView
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/informacao_valores_aproximados" />
+            android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:baselineAligned="false"
-            android:orientation="horizontal">
-
-            <android.support.design.widget.TextInputLayout
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/edtHorasDia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:hint="@string/horas_por_dia_requerido"
 
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/edtHorasDia"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/horas_por_dia_requerido"
+                android:inputType="number" />
+        </android.support.design.widget.TextInputLayout>
 
-                    android:inputType="number" />
-            </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-            <android.support.design.widget.TextInputLayout
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/edtDiasMes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
-
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/edtDiasMes"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/dias_por_mes_requerido"
-                    android:inputType="number" />
-            </android.support.design.widget.TextInputLayout>
-        </LinearLayout>
+                android:hint="@string/dias_por_mes_requerido"
+                android:inputType="number" />
+        </android.support.design.widget.TextInputLayout>
 
         <TextView
             android:layout_width="match_parent"

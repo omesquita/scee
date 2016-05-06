@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import alunounifacs.com.br.scee.R;
 import alunounifacs.com.br.scee.dao.EquipamentoDAO;
 import alunounifacs.com.br.scee.helper.EquipamentoHelper;
+import alunounifacs.com.br.scee.model.Departamento;
 import alunounifacs.com.br.scee.model.Equipamento;
 
 public class EquipamentoActivity extends BaseActivity {
@@ -21,18 +22,30 @@ public class EquipamentoActivity extends BaseActivity {
         setContentView(R.layout.activity_equipamento);
         setUpToolbar();
         setHomeAsUpIndicatorClose();
-        helper = new EquipamentoHelper(EquipamentoActivity.this);
-        equipamento = (Equipamento) getIntent().getSerializableExtra("equipamento");
-        if(equipamento != null) {
-            helper.setEquipamento(equipamento);
-        }
 
+        helper = new EquipamentoHelper(EquipamentoActivity.this);
+
+        equipamento = (Equipamento) getIntent().getSerializableExtra("equipamento");
+        if (equipamento != null)
+            helper.setEquipamento(equipamento);
+        else
+            equipamento = new Equipamento();
+        Departamento departamento = (Departamento) getIntent().getSerializableExtra("departamento");
+        if (departamento != null) {
+            equipamento.setDepartamento(departamento);
+            helper.setDepartamento(departamento);
+        }
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.activity_equipamento, menu);
+
+        if (equipamento != null) {
+            menu.findItem(R.id.action_excluir).setVisible(true);
+        }
+
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -40,14 +53,18 @@ public class EquipamentoActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_salvar) {
-            if( equipamento == null)
-                equipamento = new Equipamento();
-            if(helper.getEquipamento(equipamento) != null) {
+            if (helper.getEquipamento(equipamento) != null) {
+                equipamento.calcularConsumo();
                 new EquipamentoDAO(this).salvar(equipamento);
-                toast(getString(R.string.equipamento_s_salvo, equipamento.getDescricao()));
+                toast(getString(R.string.s_salvo, equipamento.getDescricao()));
                 setResult(1);
                 finish();
             }
+        } else if (id == R.id.action_excluir) {
+            new EquipamentoDAO(this).deletar(equipamento);
+            toast(getString(R.string.s_excluido, equipamento.getDescricao()));
+            setResult(1);
+            finish();
         } else if (id == android.R.id.home) {
             finish();
         }

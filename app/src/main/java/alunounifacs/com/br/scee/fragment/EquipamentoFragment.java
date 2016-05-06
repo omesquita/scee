@@ -63,7 +63,10 @@ public class EquipamentoFragment extends BaseFragment implements View.OnClickLis
     @Override
     public void onClick(View v) {
         Intent it = new Intent(getContext(), EquipamentoActivity.class);
-        startActivityForResult(it, 1);
+        if(departamento != null) {
+            it.putExtra("departamento", departamento);
+        }
+         startActivityForResult(it, 1);
     }
 
     @Override
@@ -74,18 +77,15 @@ public class EquipamentoFragment extends BaseFragment implements View.OnClickLis
     }
 
     @Override
-    public void onClickItemExcluir(Equipamento equipamento) {
-        new EquipamentoDAO(getContext()).deletar(equipamento);
-            onResume();
-            toast(getString(R.string.equipamento_s_excluido, equipamento.getDescricao()));
-    }
-
-    @Override
     public void onResume() {
         super.onResume();
+        /**
+         * Se o departamento for diferente de null, o fragment foi chamado
+         * atraves da lista de departamento, por isso deve ser carregado
+         * somente os equipamentos daquele departamento
+         */
         if(departamento != null) {
             equipamentos = new EquipamentoDAO(getContext()).getAllByDepartamento(departamento);
-
         } else {
             equipamentos = new EquipamentoDAO(getContext()).getAll();
         }

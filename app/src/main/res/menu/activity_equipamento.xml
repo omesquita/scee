@@ -6,4 +6,11 @@
         android:title="@string/salvar"
         android:icon="@drawable/ic_save"
         app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_excluir"
+        android:title="@string/excluir"
+        android:icon="@drawable/ic_delete"
+        android:visible="false"
+        app:showAsAction="ifRoom" />
 </menu>

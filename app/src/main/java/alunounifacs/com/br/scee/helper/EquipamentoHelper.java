@@ -26,6 +26,7 @@ public class EquipamentoHelper {
     private EditText edtDiasMes;
     private Spinner spDepartamento;
     private ArrayList<Departamento> departamentos;
+    private
 
     EquipamentoActivity activity;
 
@@ -111,6 +112,10 @@ public class EquipamentoHelper {
             }
         }
         return 0;
+    }
+
+    public void setDepartamento(Departamento departamento){
+        spDepartamento.setSelection(getItemPositionSpinner(departamento));
     }
 }
 

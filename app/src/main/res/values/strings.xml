@@ -12,22 +12,20 @@
     <string name="calcular_consumo">Calcular Consumo</string>
     <string name="excluir">Excluir</string>
     <string name="salvar">Salvar</string>
-    <string name="kwh">"%s KWh"</string>
+    <string name="kwh">"KWh"</string>
     <string name="departamento_s_excluido">Departamento %s excluído com Sucesso!</string>
     <string name="departamento_not_excluido">Departamento só pode ser excluído se não houver equipamentos vinculados.</string>
     <string name="equipamentos">Equipamentos</string>
-    <string name="equipamento_s_excluido">Equipamento %s excluído com Sucesso!</string>
-    <string name="descricao_requerido">Descrição*</string>
-    <string name="potencia_requerido">Potência*</string>
-    <string name="informacao_valores_aproximados">Os dados abaixo são valores aproximados de uso deste equipamento.</string>
-    <string name="horas_por_dia_requerido">Horas por Dia*</string>
-    <string name="dias_por_mes_requerido">Dias por Mes*</string>
+    <string name="nome_do_equipamento">Nome do Equipamento*</string>    <string name="potencia_requerido">Potência (em Whats)*</string>
+    <string name="horas_por_dia_requerido">Tempo Ligado (Horas por Dia)*</string>
+    <string name="dias_por_mes_requerido">Período (Dias)*</string>
     <string name="campo_obrigatorio">Campo Obrigatório!</string>
     <string name="departamento">Departamento</string>
-    <string name="equipamento_s_salvo">Equipamento %s Salvo Com Suscesso!</string>
+    <string name="s_salvo">%s salvo com Suscesso!</string>
+    <string name="s_excluido">%s excluído com Sucesso!</string>
     <string name="simular_fatura">Simular Fatura</string>
     <string name="ok">OK</string>
-    <string name="operacao_nao_permitida">Operação Não Permitida!</string>
+    <string name="atencao">Atenção!</string>
     <string name="configuraces">Configurações</string>
     <string name="equipamento">Equipamento</string>
     <string name="cadastros">Cadastros</string>
@@ -39,4 +37,11 @@
     <string name="entre_31_50">Entre 31 e 50 KWh</string>
     <string name="valor_tarifa">Valor da Tarifa</string>
     <string name="baixa_renda_ate_50">Baixa Renda com consumo Até 50 KWh</string>
+    <string name="tempo_de_uso">Tempo de Uso:</string>
+    <string name="horas_dia">horas/dia</string>
+    <string name="virgula">,</string>
+    <string name="dias_mes">dias/mes.</string>
+    <string name="potencia">Potencia:</string>
+    <string name="w">W</string>
+    <string name="rs">R$</string>
 </resources>
