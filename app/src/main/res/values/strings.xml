@@ -14,7 +14,7 @@
     <string name="salvar">Salvar</string>
     <string name="kwh">"%s KWh"</string>
     <string name="departamento_s_excluido">Departamento %s excluído com Sucesso!</string>
-    <string name="departamento_not_excluido">Departamento só pode ser excluído se não houver equipamentos.</string>
+    <string name="departamento_not_excluido">Departamento só pode ser excluído se não houver equipamentos vinculados.</string>
     <string name="equipamentos">Equipamentos</string>
     <string name="equipamento_s_excluido">Equipamento %s excluído com Sucesso!</string>
     <string name="descricao_requerido">Descrição*</string>
@@ -26,4 +26,17 @@
     <string name="departamento">Departamento</string>
     <string name="equipamento_s_salvo">Equipamento %s Salvo Com Suscesso!</string>
     <string name="simular_fatura">Simular Fatura</string>
+    <string name="ok">OK</string>
+    <string name="operacao_nao_permitida">Operação Não Permitida!</string>
+    <string name="configuraces">Configurações</string>
+    <string name="equipamento">Equipamento</string>
+    <string name="cadastros">Cadastros</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="tarifas">Tarifas</string>
+    <string name="ate_30_kwh">Até 30KWh</string>
+    <string name="ate_50_kwh">Até 50KWh</string>
+    <string name="entre_0_30">Entre 0 e 30 KWh</string>
+    <string name="entre_31_50">Entre 31 e 50 KWh</string>
+    <string name="valor_tarifa">Valor da Tarifa</string>
+    <string name="baixa_renda_ate_50">Baixa Renda com consumo Até 50 KWh</string>
 </resources>

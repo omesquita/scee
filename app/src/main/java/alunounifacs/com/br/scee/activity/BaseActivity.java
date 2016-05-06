@@ -32,6 +32,10 @@ public class BaseActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+    protected void setHomeAsUp(boolean bol) {
+        getSupportActionBar().setDisplayHomeAsUpEnabled(bol);
+    }
+
     protected void toast(String msg) {
         Toast.makeText(getBaseContext(), msg, Toast.LENGTH_SHORT).show();
     }

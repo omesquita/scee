@@ -77,6 +77,7 @@ public class DepartamentoDAO {
                 departamento.setDescricao(cursor.getString(cursor.getColumnIndex("descricao")));
                 departamento.setConsumo(cursor.getDouble(cursor.getColumnIndex("consumo")));
                 departamento.setValor(cursor.getDouble(cursor.getColumnIndex("valorConsumo")));
+                departamento.setEquipamentos(new EquipamentoDAO(conn).getAllByDepartamento(departamento));
                 departamentos.add(departamento);
             }
         } finally {

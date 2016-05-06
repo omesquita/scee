@@ -1,5 +1,6 @@
 package alunounifacs.com.br.scee.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.design.widget.NavigationView;
@@ -62,6 +63,8 @@ public class MainActivity extends BaseActivity
             replaceFragment(new DepartamentoFragment());
         } else if (id == R.id.nav_equipamento) {
             replaceFragment(new EquipamentoFragment());
+        } else if (id ==R.id.nav_configuracoes) {
+            startActivity(new Intent(this, ConfiguracoesActivity.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

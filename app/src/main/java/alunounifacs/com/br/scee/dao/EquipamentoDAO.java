@@ -18,11 +18,13 @@ public class EquipamentoDAO {
     private static final String TABLE_NAME = "equipamento";
 
     private ConexaoDB conn;
-    private Context context;
 
     public EquipamentoDAO(Context context) {
-        this.context = context;
         this.conn = new ConexaoDB(context);
+    }
+
+    public EquipamentoDAO(ConexaoDB conn) {
+        this.conn = conn;
     }
 
     public void salvar(Equipamento equipamento) {

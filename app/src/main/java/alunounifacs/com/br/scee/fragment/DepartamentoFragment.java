@@ -77,7 +77,8 @@ public class DepartamentoFragment extends BaseFragment implements DepartamentoDi
             onResume();
             toast(getString(R.string.departamento_s_excluido, departamento.getDescricao()));
         } else {
-            toast(getString(R.string.departamento_not_excluido));
+            simpleDialog(getString(R.string.operacao_nao_permitida),
+                    getString(R.string.departamento_not_excluido));
         }
     }
 

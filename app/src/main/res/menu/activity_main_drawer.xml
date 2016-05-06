@@ -4,26 +4,26 @@
     <item
         android:id="@+id/nav_dashboard"
         android:icon="@drawable/ic_nav_dashboard"
-        android:title="Dashboard" />
+        android:title="@string/dashboard" />
 
-    <item android:title="Cadastros">
+    <item android:title="@string/cadastros">
         <menu>
             <item
                 android:id="@+id/nav_departamento"
                 android:icon="@drawable/ic_nav_departamento"
-                android:title="Departamento" />
+                android:title="@string/departamento" />
             <item
                 android:id="@+id/nav_equipamento"
                 android:icon="@drawable/ic_nav_equipamento"
-                android:title="Equipamento" />
+                android:title="@string/equipamento" />
         </menu>
     </item>
-    <item android:title="Configurações">
+    <item android:title="@string/configuraces">
         <menu>
             <item
                 android:id="@+id/nav_configuracoes"
                 android:icon="@drawable/ic_nav_configuracoes"
-                android:title="Tarifas" />
+                android:title="@string/configuraces" />
         </menu>
     </item>
 </menu>
