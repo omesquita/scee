@@ -90,8 +90,8 @@ public class Tarifa implements Serializable {
     }
 
     private void calculaTarifa() {
-        tarifaFinal = tarifaBase / (tributo.getTotal() / 100);
-        valorTotal = tarifaFinal * quantidadeKWh;
+        this.tarifaFinal = tarifaBase / (1 - tributo.getTotal()/100);
+        this.valorTotal = tarifaFinal * quantidadeKWh;
     }
 
 }

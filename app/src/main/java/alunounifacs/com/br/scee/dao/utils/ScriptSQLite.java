@@ -81,9 +81,9 @@ public abstract class ScriptSQLite {
 
     public static String[] populateTipo() {
         return new String[] {
-                "INSERT INTO tipo (descricao, consumo_maximo) VALUES ('BAIXA RENDA (até 50,00 kWh)', 50.0);",
-                "INSERT INTO tipo (descricao, consumo_maximo) VALUES ('BAIXA RENDA (até 149,99 kWh)', 149.99);",
-                "INSERT INTO tipo (descricao, consumo_maximo) VALUES ('BAIXA RENDA (igual ou superior a 150 kWh)', 999999999);"
+                "INSERT INTO tipo (descricao, consumo_maximo) VALUES ('B1 - RESIDENCIAL - BAIXA RENDA (até 50,00 kWh)', 50.0);",
+                "INSERT INTO tipo (descricao, consumo_maximo) VALUES ('B1 - RESIDENCIAL - BAIXA RENDA (até 149,99 kWh)', 149.99);",
+                "INSERT INTO tipo (descricao, consumo_maximo) VALUES ('B1 - RESIDENCIAL - BAIXA RENDA (igual ou superior a 150 kWh)', 999999999);"
         };
     }
 
@@ -98,7 +98,7 @@ public abstract class ScriptSQLite {
     public static String[] populateTarifa() {
         return new String[]{
                 "INSERT INTO tarifa (tarifa_base, tarifa_final, consumo_maximo, quantidade_kwh, valor_total, id_tipo, id_tributo) VALUES (0.134096, NULL, 30, '', NULL, 1, 1);",
-                "INSERT INTO tarifa (tarifa_base, tarifa_final, consumo_maximo, quantidade_kwh, valor_total, id_tipo, id_tributo) VALUES (0.229878, NULL, 50, '', NULL, 1, 1);",
+                "INSERT INTO tarifa (tarifa_base, tarifa_final, consumo_maximo, quantidade_kwh, valor_total, id_tipo, id_tributo) VALUES (0.229878, '', 50, '', NULL, 1, 1);",
                 "INSERT INTO tarifa (tarifa_base, tarifa_final, consumo_maximo, quantidade_kwh, valor_total, id_tipo, id_tributo) VALUES (0.134096, '', 30, '', NULL, 2, 2);",
                 "INSERT INTO tarifa (tarifa_base, tarifa_final, consumo_maximo, quantidade_kwh, valor_total, id_tipo, id_tributo) VALUES (0.229878, '', 100, '', '', 2, 2);",
                 "INSERT INTO tarifa (tarifa_base, tarifa_final, consumo_maximo, quantidade_kwh, valor_total, id_tipo, id_tributo) VALUES (0.344817, '', 149.99, '', NULL, 2, 2);",

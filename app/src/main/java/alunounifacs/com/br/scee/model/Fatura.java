@@ -86,8 +86,10 @@ public class Fatura implements Serializable {
     }
 
     public void calculaFatura(Context context) {
-        calcularConsumoTotal();
+        this.valorFinal = 0;
 
+        calcularConsumoTotal();
+        getTipoTarifa(context);
         double consumoTemp = 0;
         double consumoUsado = 0;
 
@@ -96,17 +98,30 @@ public class Fatura implements Serializable {
                 t.setQuantidadeKWh(t.getConsumoMaximo() - consumoTemp);
                 consumoUsado += t.getConsumoMaximo();
                 consumoTemp = t.getConsumoMaximo() - consumoTemp;
+                valorFinal += t.getValorTotal();
+                tarifasAplicadas.add(t);
             } else {
                 t.setQuantidadeKWh(consumoKWh - consumoUsado);
+                valorFinal += t.getValorTotal();
+                tarifasAplicadas.add(t);
+                break;
             }
-            valorFinal += t.getValorTotal();
-            tarifasAplicadas.add(t);
         }
+
+        atualizarValores();
     }
 
     private void calcularConsumoTotal() {
+        this.consumoKWh = 0;
         for (Departamento departamento : departamentos) {
-            consumoKWh += departamento.calcularConsumo();
+            this.consumoKWh += departamento.calcularConsumo();
+        }
+    }
+
+    private void atualizarValores() {
+        double valorKWh = this.valorFinal / this.consumoKWh;
+        for(Departamento departamento :departamentos){
+            departamento.calcularValorFinal(valorKWh);
         }
     }
 

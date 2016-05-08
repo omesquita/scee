@@ -59,4 +59,10 @@
     <string name="valor_total">Valor Total</string>
     <string name="title_novo_equipamento">Novo Equipamento</string>
     <string name="title_editar_equipamento">Editar Equipamento</string>
+    <string name="descricao_da_fatura">Descricao da Fatura</string>
+    <string name="item">Item</string>
+    <string name="quantidade">Qtd.</string>
+    <string name="preco">Preço</string>
+    <string name="valor_rs">Valor (R$)</string>
+    <string name="total_da_fatura">Total da Fatura</string>
 </resources>

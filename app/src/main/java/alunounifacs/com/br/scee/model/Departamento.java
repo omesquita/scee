@@ -58,9 +58,10 @@ public class Departamento implements Serializable {
     }
 
     public double calcularConsumo() {
-            for (Equipamento equipamento : equipamentos) {
-                consumo += equipamento.calcularConsumo();
-            }
+        consumo = 0;
+        for (Equipamento equipamento : equipamentos) {
+            consumo += equipamento.calcularConsumo();
+        }
 
         return consumo;
     }
@@ -68,5 +69,12 @@ public class Departamento implements Serializable {
     @Override
     public String toString() {
         return descricao;
+    }
+
+    public void calcularValorFinal(double valorKWh) {
+        this.valor = 0;
+        for(Equipamento equipamento : equipamentos) {
+            valor += equipamento.calcularValorFinal(valorKWh);
+        }
     }
 }

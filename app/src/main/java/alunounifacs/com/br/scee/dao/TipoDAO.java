@@ -59,7 +59,7 @@ public class TipoDAO {
                 tipo.setId(cursor.getInt(cursor.getColumnIndex("id")));
                 tipo.setDescricao(cursor.getString(cursor.getColumnIndex("descricao")));
                 tipo.setConsumoMaximo(cursor.getDouble(cursor.getColumnIndex("consumo_maximo")));
-                tipo.setTarifas(new TarifaDAO(context).getAllByTipo(tipo));
+                tipo.setTarifas(new TarifaDAO(conn).getAllByTipo(tipo));
                 tipos.add(tipo);
             }
         } finally {

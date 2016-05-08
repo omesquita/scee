@@ -76,7 +76,7 @@ public class DepartamentoDAO {
                 departamento.setId(cursor.getInt(cursor.getColumnIndex("id")));
                 departamento.setDescricao(cursor.getString(cursor.getColumnIndex("descricao")));
                 departamento.setConsumo(cursor.getDouble(cursor.getColumnIndex("consumo")));
-                departamento.setValor(cursor.getDouble(cursor.getColumnIndex("valorConsumo")));
+//                departamento.setValor(cursor.getDouble(cursor.getColumnIndex("valorConsumo")));
                 departamento.setEquipamentos(new EquipamentoDAO(conn).getAllByDepartamento(departamento));
                 departamentos.add(departamento);
             }
@@ -103,7 +103,7 @@ public class DepartamentoDAO {
                 departamento.setId(cursor.getInt(cursor.getColumnIndex("id")));
                 departamento.setDescricao(cursor.getString(cursor.getColumnIndex("descricao")));
                 departamento.setConsumo(cursor.getDouble(cursor.getColumnIndex("consumo")));
-                departamento.setValor(cursor.getDouble(cursor.getColumnIndex("valorConsumo")));
+//                departamento.setValor(cursor.getDouble(cursor.getColumnIndex("valorConsumo")));
             }
         } finally {
             if (cursor != null) cursor.close();

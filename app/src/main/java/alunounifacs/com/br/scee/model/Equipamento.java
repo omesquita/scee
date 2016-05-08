@@ -84,4 +84,8 @@ public class Equipamento implements Serializable{
         consumo = (double) (potencia / 1000) * horasDia * diasMes;
         return consumo;
     }
+
+    public double calcularValorFinal(double valorKWh) {
+        return this.valorConsumo = valorKWh * this.consumo;
+    }
 }

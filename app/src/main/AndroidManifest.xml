@@ -23,10 +23,10 @@
         <activity
             android:name=".activity.EquipamentoActivity"
             android:label="@string/title_novo_equipamento" />
-        <activity android:name=".activity.ConfiguracoesActivity" >
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".activity.MainActivity" />
+        <activity android:name=".activity.ConfiguracoesActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivity" />
         </activity>
     </application>
 

@@ -108,7 +108,7 @@ public class EquipamentoDAO {
             equipamento.setDescricao(cursor.getString(cursor.getColumnIndex("descricao")));
             equipamento.setPotencia(cursor.getDouble(cursor.getColumnIndex("potencia")));
             equipamento.setConsumo(cursor.getDouble(cursor.getColumnIndex("consumo")));
-            equipamento.setValorConsumo(cursor.getDouble(cursor.getColumnIndex("valorConsumo")));
+//            equipamento.setValorConsumo(cursor.getDouble(cursor.getColumnIndex("valorConsumo")));
             equipamento.setHorasDia(cursor.getInt(cursor.getColumnIndex("horas_dias")));
             equipamento.setDiasMes(cursor.getInt(cursor.getColumnIndex("dias_mes")));
             Departamento temp = new DepartamentoDAO(conn).

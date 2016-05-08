@@ -25,13 +25,17 @@ public class TarifaDAO {
         this.context = context;
     }
 
+    public TarifaDAO(ConexaoDB conn) {
+        this.conn = conn;
+    }
+
     public List<Tarifa> getAllByTipo (Tipo tipo) {
             SQLiteDatabase db = conn.getReadableDatabase();
             List<Tarifa> tarifas = new ArrayList<>();
 
             Cursor cursor = null;
             String[] selectionArgs = new String[] {String.valueOf(tipo.getId())};
-            String selection = "id = ?";
+            String selection = "id_tipo = ?";
 
             try {
 
@@ -42,7 +46,7 @@ public class TarifaDAO {
                     tarifa.setConsumoMaximo(cursor.getDouble(cursor.getColumnIndex("consumo_maximo")));
                     tarifa.setTarifaBase(cursor.getDouble(cursor.getColumnIndex("tarifa_base")));
                     tarifa.setTarifaFinal(cursor.getDouble(cursor.getColumnIndex("tarifa_final")));
-                    tarifa.setTributo(new TributoDAO(context).getById(
+                    tarifa.setTributo(new TributoDAO(conn).getById(
                             cursor.getInt(cursor.getColumnIndex("id_tributo"))));
                     tarifa.setTipo(tipo);
                     tarifas.add(tarifa);

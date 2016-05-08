@@ -19,8 +19,8 @@ public class TributoDAO {
         this.conn = new ConexaoDB(context);
     }
 
-    public void salvar(Tributo tributo) {
-
+    public TributoDAO(ConexaoDB conn) {
+        this.conn = conn;
     }
 
     public Tributo getById(int id){

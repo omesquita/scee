@@ -13,15 +13,6 @@ public class Tipo implements Serializable {
     private double consumoMaximo;
     private List<Tarifa> tarifas;
 
-    public Tipo() {}
-
-    public Tipo(int id, String descricao, double consumoMaximo, List<Tarifa> tarifas) {
-        this.id = id;
-        this.descricao = descricao;
-        this.consumoMaximo = consumoMaximo;
-        this.tarifas = tarifas;
-    }
-
     public int getId() {
         return id;
     }
@@ -53,9 +44,4 @@ public class Tipo implements Serializable {
     public void setTarifas(List<Tarifa> tarifas) {
         this.tarifas = tarifas;
     }
-
-    public void addTarifa(Tarifa tarifa) {
-        tarifas.add(tarifa);
-    }
-
 }

@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -19,6 +20,7 @@ import alunounifacs.com.br.scee.R;
 import alunounifacs.com.br.scee.activity.EquipamentoActivity;
 import alunounifacs.com.br.scee.adapter.EquipamentoAdapter;
 import alunounifacs.com.br.scee.dao.EquipamentoDAO;
+import alunounifacs.com.br.scee.dialog.SimularFaturaDialog;
 import alunounifacs.com.br.scee.model.Departamento;
 import alunounifacs.com.br.scee.model.Equipamento;
 
@@ -28,12 +30,14 @@ public class EquipamentoFragment extends BaseFragment implements View.OnClickLis
     private RecyclerView recyclerViewEquipamento;
     private List<Equipamento> equipamentos;
     private Departamento departamento;
-    public EquipamentoFragment() {}
+
+    public EquipamentoFragment() {
+    }
 
     public void setDepartamento(Departamento departamento) {
         this.departamento = departamento;
     }
-    
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -47,7 +51,14 @@ public class EquipamentoFragment extends BaseFragment implements View.OnClickLis
         btnCalcularConsumoTotal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toast("Simular Faturas");
+                new SimularFaturaDialog().show(getFragmentManager(),
+                        new SimularFaturaDialog.Callback() {
+                            @Override
+                            public void finalizado() {
+                                toast("Foi chamado");
+                                onResume();
+                            }
+                        });
             }
         });
 
@@ -63,10 +74,10 @@ public class EquipamentoFragment extends BaseFragment implements View.OnClickLis
     @Override
     public void onClick(View v) {
         Intent it = new Intent(getContext(), EquipamentoActivity.class);
-        if(departamento != null) {
+        if (departamento != null) {
             it.putExtra("departamento", departamento);
         }
-         startActivityForResult(it, 1);
+        startActivityForResult(it, 1);
     }
 
     @Override
@@ -84,7 +95,7 @@ public class EquipamentoFragment extends BaseFragment implements View.OnClickLis
          * atraves da lista de departamento, por isso deve ser carregado
          * somente os equipamentos daquele departamento
          */
-        if(departamento != null) {
+        if (departamento != null) {
             equipamentos = new EquipamentoDAO(getContext()).getAllByDepartamento(departamento);
         } else {
             equipamentos = new EquipamentoDAO(getContext()).getAll();
@@ -95,7 +106,7 @@ public class EquipamentoFragment extends BaseFragment implements View.OnClickLis
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode == 1 && resultCode == Activity.RESULT_OK) {
+        if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
             onResume();
         }
     }

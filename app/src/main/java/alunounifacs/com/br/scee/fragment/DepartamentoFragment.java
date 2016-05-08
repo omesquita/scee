@@ -18,6 +18,7 @@ import alunounifacs.com.br.scee.dialog.DepartamentoDialog;
 import alunounifacs.com.br.scee.R;
 import alunounifacs.com.br.scee.adapter.DepartamentoAdapter;
 import alunounifacs.com.br.scee.dao.DepartamentoDAO;
+import alunounifacs.com.br.scee.dialog.SimularFaturaDialog;
 import alunounifacs.com.br.scee.model.Departamento;
 
 public class DepartamentoFragment extends BaseFragment implements DepartamentoDialog.Callback
@@ -25,7 +26,9 @@ public class DepartamentoFragment extends BaseFragment implements DepartamentoDi
 
     private RecyclerView recyclerViewDepartamento;
     private List<Departamento> departamentos;
-    public DepartamentoFragment() {}
+
+    public DepartamentoFragment() {
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,7 +42,13 @@ public class DepartamentoFragment extends BaseFragment implements DepartamentoDi
         btnCalcularConsumoTotal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Simular Fatura
+                new SimularFaturaDialog().show(getFragmentManager(),
+                        new SimularFaturaDialog.Callback() {
+                            @Override
+                            public void finalizado() {
+                                    onResume();
+                            }
+                        });
             }
         });
         LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(getActivity());
@@ -72,7 +81,7 @@ public class DepartamentoFragment extends BaseFragment implements DepartamentoDi
 
     @Override
     public void onClickItemExcluir(Departamento departamento) {
-        if(new DepartamentoDAO(getContext()).deletar(departamento)) {
+        if (new DepartamentoDAO(getContext()).deletar(departamento)) {
             onResume();
             toast(getString(R.string.s_excluido, departamento.getDescricao()));
         } else {
@@ -85,7 +94,6 @@ public class DepartamentoFragment extends BaseFragment implements DepartamentoDi
     public void onClickSalvar(Departamento departamento) {
         onResume();
     }
-
 
     @Override
     public void onResume() {
