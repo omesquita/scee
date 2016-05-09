@@ -1,6 +1,7 @@
 package alunounifacs.com.br.scee.model;
 
 import android.content.Context;
+import android.util.Log;
 
 import java.io.Serializable;
 import java.util.ArrayList;

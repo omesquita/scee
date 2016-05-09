@@ -43,6 +43,7 @@ public class TarifaDAO {
                 while (cursor.moveToNext()) {
                     Tarifa tarifa= new Tarifa();
                     tarifa.setId(cursor.getInt(cursor.getColumnIndex("id")));
+                    tarifa.setDescricao(cursor.getString(cursor.getColumnIndex("descricao")));
                     tarifa.setConsumoMaximo(cursor.getDouble(cursor.getColumnIndex("consumo_maximo")));
                     tarifa.setTarifaBase(cursor.getDouble(cursor.getColumnIndex("tarifa_base")));
                     tarifa.setTarifaFinal(cursor.getDouble(cursor.getColumnIndex("tarifa_final")));
@@ -72,6 +73,7 @@ public class TarifaDAO {
             if (cursor.moveToFirst()) {
                 tarifa = new Tarifa();
                 tarifa.setId(cursor.getInt(cursor.getColumnIndex("id")));
+                tarifa.setDescricao(cursor.getString(cursor.getColumnIndex("descricao")));
                 tarifa.setConsumoMaximo(cursor.getDouble(cursor.getColumnIndex("consumo_maximo")));
                 tarifa.setTarifaBase(cursor.getDouble(cursor.getColumnIndex("tarifa_base")));
                 tarifa.setTarifaFinal(cursor.getDouble(cursor.getColumnIndex("tarifa_final")));

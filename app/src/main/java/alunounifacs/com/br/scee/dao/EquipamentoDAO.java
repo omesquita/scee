@@ -108,7 +108,7 @@ public class EquipamentoDAO {
             equipamento.setDescricao(cursor.getString(cursor.getColumnIndex("descricao")));
             equipamento.setPotencia(cursor.getDouble(cursor.getColumnIndex("potencia")));
             equipamento.setConsumo(cursor.getDouble(cursor.getColumnIndex("consumo")));
-//            equipamento.setValorConsumo(cursor.getDouble(cursor.getColumnIndex("valorConsumo")));
+            equipamento.setValorConsumo(cursor.getDouble(cursor.getColumnIndex("valorConsumo")));
             equipamento.setHorasDia(cursor.getInt(cursor.getColumnIndex("horas_dias")));
             equipamento.setDiasMes(cursor.getInt(cursor.getColumnIndex("dias_mes")));
             Departamento temp = new DepartamentoDAO(conn).
@@ -117,5 +117,18 @@ public class EquipamentoDAO {
             equipamentos.add(equipamento);
         }
         return equipamentos;
+    }
+
+    public void updateByDepartamento(Departamento d) {
+        SQLiteDatabase db = conn.getWritableDatabase();
+
+        for (Equipamento e : d.getEquipamentos()) {
+            ContentValues v = new ContentValues();
+            v.put("valorConsumo", e.getValorConsumo());
+
+            String whereClause = "id = ?";
+            String[] whereArgs = new String[]{String.valueOf(e.getId())};
+            db.update(TABLE_NAME, v, whereClause, whereArgs);
+        }
     }
 }

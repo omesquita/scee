@@ -7,6 +7,7 @@ import java.io.Serializable;
  */
 public class Tarifa implements Serializable {
     private int id;
+    private String descricao;
     private double tarifaBase;
     private double tarifaFinal;
     private double consumoMaximo;
@@ -30,6 +31,14 @@ public class Tarifa implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public double getTarifaBase() {

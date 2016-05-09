@@ -55,7 +55,7 @@ public class DepartamentoAdapter extends RecyclerView.Adapter<DepartamentoAdapte
         holder.txvQtdEquipamento.setText(
                 departamento.getEquipamentos() == null ? "0" : departamento.getEquipamentos().size()+"");
         holder.txvConsumo.setText(String.format("%.2f", departamento.getConsumo()));
-        holder.txvValor.setText(String.format("%.2f", departamento.getValor()));
+        holder.txvValor.setText(String.format("%.2f", departamento.getValorFinal()));
 
 
         if (onClickListner != null) {

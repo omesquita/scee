@@ -35,6 +35,9 @@ public class DashboardFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
+
+        getActivity().setTitle("SCEE");
+
         fatura = new Fatura();
         App.getInstance().setFatura(fatura);
         txvConsumoTotal = (TextView) view.findViewById(R.id.txvConsumoTotal);

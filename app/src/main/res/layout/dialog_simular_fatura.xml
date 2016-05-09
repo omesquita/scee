@@ -26,9 +26,9 @@
                 android:id="@+id/txvTipoTarifa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
+                android:layout_marginBottom="3dp"
                 android:gravity="center"
-                android:layout_marginBottom="3dp" />
+                android:textStyle="bold" />
 
             <View
                 android:layout_width="match_parent"
@@ -145,7 +145,6 @@
             <TableRow android:layout_marginBottom="3dp">
 
                 <TextView
-                    android:id="@+id/txvDescricao"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="2dp"
@@ -155,7 +154,6 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/txvQuantidade"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="2dp"
@@ -165,7 +163,6 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/txvPreco"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
@@ -173,7 +170,6 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/txvValor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -181,6 +177,10 @@
                     android:textStyle="bold" />
 
             </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></TableRow>
 
             <View
                 android:layout_width="match_parent"

@@ -23,6 +23,7 @@ import alunounifacs.com.br.scee.R;
 import alunounifacs.com.br.scee.dao.DepartamentoDAO;
 import alunounifacs.com.br.scee.model.Fatura;
 import alunounifacs.com.br.scee.model.Tarifa;
+import alunounifacs.com.br.scee.model.Tributo;
 
 /**
  * Created by omesquita on 06/05/16.
@@ -51,6 +52,7 @@ public class SimularFaturaDialog extends DialogFragment {
         fatura.setDepartamentos(new DepartamentoDAO(getContext()).getAll());
         fatura.setData(Calendar.getInstance().getTime());
         fatura.calculaFatura(getContext());
+        new DepartamentoDAO(getContext()).atualizarValores(fatura.getDepartamentos());
         List<Tarifa> tarifas = fatura.getTarifasAplicadas();
 
         inicializaComponentes(view);
@@ -60,11 +62,11 @@ public class SimularFaturaDialog extends DialogFragment {
         txvConsumoTotal.setText(String.format("%.2f", fatura.getConsumoKWh()));
         txvValotTotalFatura.setText(String.format("%.2f", fatura.getValorFinal()));
 
-        TableLayout table = (TableLayout) view.findViewById(R.id.tabelaFatura);
+        TableLayout tableTarifas = (TableLayout) view.findViewById(R.id.tabelaFatura);
 
         for (Tarifa tarifa : tarifas) {
             if (tarifa.getQuantidadeKWh() != 0) {
-                addItemFatura(tarifa, table);
+                addItemFatura(tarifa, tableTarifas);
             }
         }
 
@@ -84,7 +86,7 @@ public class SimularFaturaDialog extends DialogFragment {
         params.weight = 4.0f;
         TextView descricao = new TextView(getContext());
         descricao.setLayoutParams(params);
-        descricao.setText("Descricao");
+        descricao.setText(tarifa.getDescricao());
 
         params.weight = 0.4f;
         TextView quantidade = new TextView(getContext());
@@ -95,6 +97,7 @@ public class SimularFaturaDialog extends DialogFragment {
         TextView precoUnit = new TextView(getContext());
         precoUnit.setText(String.format("%.8f", tarifa.getTarifaFinal()));
         precoUnit.setLayoutParams(params);
+
 
         params.weight = 1.0f;
         TextView valor = new TextView(getContext());

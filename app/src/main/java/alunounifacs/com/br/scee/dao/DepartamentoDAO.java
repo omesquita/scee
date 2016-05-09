@@ -94,7 +94,7 @@ public class DepartamentoDAO {
         Cursor cursor = null;
         Departamento departamento = null;
         String selection = "id = ?";
-        String selectionArgs[] = new String[] {String.valueOf(id_departamento)};
+        String selectionArgs[] = new String[]{String.valueOf(id_departamento)};
 
         try {
             cursor = db.query(TABLE_NAME, null, selection, selectionArgs, null, null, null);
@@ -111,5 +111,15 @@ public class DepartamentoDAO {
         }
 
         return departamento;
+    }
+
+    public void atualizarValores(List<Departamento> departamentos) {
+        SQLiteDatabase db = conn.getReadableDatabase();
+
+        for (Departamento d : departamentos) {
+            new EquipamentoDAO(conn).updateByDepartamento(d);
+        }
+
+
     }
 }

@@ -1,5 +1,7 @@
 package alunounifacs.com.br.scee.model;
 
+import android.util.Log;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -53,14 +55,11 @@ public class Departamento implements Serializable {
         return valor;
     }
 
-    public void setValor(double valor) {
-        this.valor = valor;
-    }
-
     public double calcularConsumo() {
         consumo = 0;
         for (Equipamento equipamento : equipamentos) {
             consumo += equipamento.calcularConsumo();
+
         }
 
         return consumo;
@@ -77,4 +76,13 @@ public class Departamento implements Serializable {
             valor += equipamento.calcularValorFinal(valorKWh);
         }
     }
+
+    public double getValorFinal(){
+        double sum = 0;
+        for(Equipamento equipamento : equipamentos) {
+            sum += equipamento.getValorConsumo();
+        }
+        return sum;
+    }
+
 }

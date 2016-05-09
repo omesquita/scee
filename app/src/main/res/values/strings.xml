@@ -65,4 +65,8 @@
     <string name="preco">Preço</string>
     <string name="valor_rs">Valor (R$)</string>
     <string name="total_da_fatura">Total da Fatura</string>
+    <string name="informacoes_de_tributos">INFORMAÇÕES DE TRIBUTOS</string>
+    <string name="porcento">%</string>
+    <string name="valor_do_imposto">Valor do Imposto</string>
+    <string name="base_de_calculo">Base de Calculo</string>
 </resources>

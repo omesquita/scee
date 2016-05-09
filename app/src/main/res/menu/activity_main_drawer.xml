@@ -18,12 +18,4 @@
                 android:title="@string/equipamento" />
         </menu>
     </item>
-    <item android:title="@string/configuraces">
-        <menu>
-            <item
-                android:id="@+id/nav_configuracoes"
-                android:icon="@drawable/ic_nav_configuracoes"
-                android:title="@string/configuraces" />
-        </menu>
-    </item>
 </menu>

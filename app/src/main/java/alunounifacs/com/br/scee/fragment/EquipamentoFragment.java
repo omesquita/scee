@@ -55,7 +55,6 @@ public class EquipamentoFragment extends BaseFragment implements View.OnClickLis
                         new SimularFaturaDialog.Callback() {
                             @Override
                             public void finalizado() {
-                                toast("Foi chamado");
                                 onResume();
                             }
                         });

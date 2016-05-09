@@ -42,6 +42,7 @@ public abstract class ScriptSQLite {
     public static String tarifaV1() {
         return "CREATE TABLE IF NOT EXISTS tarifa (" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                "descricao TEXT NOT NULL, " +
                 "tarifa_base DOUBLE NOT NULL, " +
                 "tarifa_final DOUBLE, " +
                 "consumo_maximo DOUBLE NOT NULL, " +
@@ -97,15 +98,15 @@ public abstract class ScriptSQLite {
 
     public static String[] populateTarifa() {
         return new String[]{
-                "INSERT INTO tarifa (tarifa_base, tarifa_final, consumo_maximo, quantidade_kwh, valor_total, id_tipo, id_tributo) VALUES (0.134096, NULL, 30, '', NULL, 1, 1);",
-                "INSERT INTO tarifa (tarifa_base, tarifa_final, consumo_maximo, quantidade_kwh, valor_total, id_tipo, id_tributo) VALUES (0.229878, '', 50, '', NULL, 1, 1);",
-                "INSERT INTO tarifa (tarifa_base, tarifa_final, consumo_maximo, quantidade_kwh, valor_total, id_tipo, id_tributo) VALUES (0.134096, '', 30, '', NULL, 2, 2);",
-                "INSERT INTO tarifa (tarifa_base, tarifa_final, consumo_maximo, quantidade_kwh, valor_total, id_tipo, id_tributo) VALUES (0.229878, '', 100, '', '', 2, 2);",
-                "INSERT INTO tarifa (tarifa_base, tarifa_final, consumo_maximo, quantidade_kwh, valor_total, id_tipo, id_tributo) VALUES (0.344817, '', 149.99, '', NULL, 2, 2);",
-                "INSERT INTO tarifa (tarifa_base, tarifa_final, consumo_maximo, quantidade_kwh, valor_total, id_tipo, id_tributo) VALUES (0.134096, '', 30, '', '', 3, 3);",
-                "INSERT INTO tarifa (tarifa_base, tarifa_final, consumo_maximo, quantidade_kwh, valor_total, id_tipo, id_tributo) VALUES (0.229878, '', 100, '', '', 3, 3);",
-                "INSERT INTO tarifa (tarifa_base, tarifa_final, consumo_maximo, quantidade_kwh, valor_total, id_tipo, id_tributo) VALUES (0.344817, '', 220, '', '', 3, 3);",
-                "INSERT INTO tarifa (tarifa_base, tarifa_final, consumo_maximo, quantidade_kwh, valor_total, id_tipo, id_tributo) VALUES (0.38313, '', 1e+09, '', '', 3, 3);"
+                "INSERT INTO tarifa (descricao, tarifa_base, tarifa_final, consumo_maximo, quantidade_kwh, valor_total, id_tipo, id_tributo) VALUES ('Até 30KWh', 0.134096, NULL, 30, '', NULL, 1, 1);",
+                "INSERT INTO tarifa (descricao, tarifa_base, tarifa_final, consumo_maximo, quantidade_kwh, valor_total, id_tipo, id_tributo) VALUES ('De 31 até 50KWh', 0.229878, '', 50, '', NULL, 1, 1);",
+                "INSERT INTO tarifa (descricao, tarifa_base, tarifa_final, consumo_maximo, quantidade_kwh, valor_total, id_tipo, id_tributo) VALUES ('Até 30KWh', 0.134096, '', 30, '', NULL, 2, 2);",
+                "INSERT INTO tarifa (descricao, tarifa_base, tarifa_final, consumo_maximo, quantidade_kwh, valor_total, id_tipo, id_tributo) VALUES ('De 31 até 100KWh', 0.229878, '', 100, '', '', 2, 2);",
+                "INSERT INTO tarifa (descricao, tarifa_base, tarifa_final, consumo_maximo, quantidade_kwh, valor_total, id_tipo, id_tributo) VALUES ('De 101 até 149.99KWh', 0.344817, '', 149.99, '', NULL, 2, 2);",
+                "INSERT INTO tarifa (descricao, tarifa_base, tarifa_final, consumo_maximo, quantidade_kwh, valor_total, id_tipo, id_tributo) VALUES ('Até 30KWh', 0.134096, '', 30, '', '', 3, 3);",
+                "INSERT INTO tarifa (descricao, tarifa_base, tarifa_final, consumo_maximo, quantidade_kwh, valor_total, id_tipo, id_tributo) VALUES ('De 31 até 100KWh', 0.229878, '', 100, '', '', 3, 3);",
+                "INSERT INTO tarifa (descricao, tarifa_base, tarifa_final, consumo_maximo, quantidade_kwh, valor_total, id_tipo, id_tributo) VALUES ('De 101 até 220KWh',0.344817, '', 220, '', '', 3, 3);",
+                "INSERT INTO tarifa (descricao, tarifa_base, tarifa_final, consumo_maximo, quantidade_kwh, valor_total, id_tipo, id_tributo) VALUES ('Acima de 220KWh', 0.38313, '', 1e+09, '', '', 3, 3);"
         };
     }
 }
